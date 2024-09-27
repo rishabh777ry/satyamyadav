@@ -1,0 +1,26 @@
+.tour-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .tour-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .tour-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+ 
+  .tour-card .btn {
+    background-color: #FAA935; /* Button background color */
+    border-color: #FAA935; /* Button border color */
+  }
+  
+  .tour-card .btn:hover {
+    background-color: #e8a63c; /* Darker shade on hover */
+    border-color: #e8a63c; /* Darker border color on hover */
+  }
+  

@@ -1,8 +1,9 @@
 import React from 'react'
 import Slider from 'react-slick'
-import ava01 from '../../assets/images/ava-1.jpg'
-import ava02 from '../../assets/images/ava-2.jpg'
-import ava03 from '../../assets/images/ava-3.jpg'
+import four from '../../assets/images/four.jpg'
+import one from '../../assets/images/one.jpg'
+import three from '../../assets/images/three.jpg'
+import two from '../../assets/images/two.jpg'
 
 const Testimonials = () => {
    const settings = {
@@ -40,7 +41,7 @@ const Testimonials = () => {
          </p>
 
          <div className='d-flex align-items-center gap-4 mt-3'>
-            <img src={ava01} className='w-25 h-25 rounded-2' alt="" />
+            <img src={one} className='w-25 h-25 rounded-2' alt="" />
             <div>
                <h6 className='mb-0 mt-3'>Ravi Sharma</h6>
                <p>Customer</p>
@@ -53,9 +54,9 @@ const Testimonials = () => {
          </p>
 
          <div className='d-flex align-items-center gap-4 mt-3'>
-            <img src={ava02} className='w-25 h-25 rounded-2' alt="" />
+            <img src={two} className='w-25 h-25 rounded-2' alt="" />
             <div>
-               <h6 className='mb-0 mt-3'>Sneha Patidar</h6>
+               <h6 className='mb-0 mt-3'>Ritesh Patidar</h6>
                <p>Customer</p>
             </div>
          </div> 
@@ -66,7 +67,7 @@ const Testimonials = () => {
          </p>
 
          <div className='d-flex align-items-center gap-4 mt-3'>
-            <img src={ava03} className='w-25 h-25 rounded-2' alt="" />
+            <img src={three} className='w-25 h-25 rounded-2' alt="" />
             <div>
                <h6 className='mb-0 mt-3'>Ankit Verma</h6>
                <p>Customer</p>
@@ -79,7 +80,7 @@ const Testimonials = () => {
          </p>
 
          <div className='d-flex align-items-center gap-4 mt-3'>
-            <img src={ava03} className='w-25 h-25 rounded-2' alt="" />
+            <img src={four} className='w-25 h-25 rounded-2' alt="" />
             <div>
                <h6 className='mb-0 mt-3'>Nikhil Agrawal</h6>
                <p>Customer</p>

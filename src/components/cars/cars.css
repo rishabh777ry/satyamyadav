@@ -1,187 +1,71 @@
-/* Container for the slider */
+/* General Styles for the Slider Container */
 .slider-container {
-  overflow-x: auto; /* Allows horizontal scrolling */
-  white-space: nowrap; /* Prevents wrapping */
-  width: 100%; /* Set container width */
-  padding: 20px;
+  width: 100%; /* Full width of the container */
+  padding: 20px; /* Padding around the slider */
 }
 
+/* Cards Slider Flexbox */
 .cards-slider {
-  display: flex; /* Make the cards align in a row */
-  gap: 20px; /* Add space between cards */
+  display: flex; /* Align cards in a row */
 }
 
+/* Individual Card Styles */
 .card {
-  display: inline-block; /* Keep cards inline */
-  min-width: 250px; /* Set a minimum width for each card */
-  max-width: 300px; /* Set a maximum width for each card */
-  background-color: #fff; /* Card styling */
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  text-align: left;
-  margin-right: 10px; /* Adjust space between cards */
+  flex: 0 0 auto; /* Prevent cards from growing or shrinking */
+  width: 300px; /* Set width for each card */
+  margin: 0 10px; /* Adjust space between cards */
+  background-color: #fff; /* Card background */
+  border: 1px solid #ddd; /* Card border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  padding: 15px; /* Inner padding */
+  text-align: left; /* Align text to the left */
 }
 
+/* Card Image */
 .card-image {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+  width: 100%; /* Full width for the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for image */
 }
 
-.card-content {
-  padding: 10px;
-}
-
+/* Card Title and Details */
 .card-title {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 18px; /* Font size for card title */
+  margin-bottom: 10px; /* Space below title */
 }
 
 .card-price {
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 16px; /* Font size for price */
+  margin-bottom: 5px; /* Space below price */
 }
 
 .card-details {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
+  list-style: none; /* Remove list style */
+  padding: 0; /* Remove padding */
+  margin: 10px 0; /* Margin around details */
 }
 
+/* Card Button */
 .card-button {
-  background-color: #FAA935;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #FAA935; /* Button background color */
+  color: white; /* Button text color */
+  padding: 8px 15px; /* Button padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 .card-button:hover {
-  background-color: #FAA935;
-}
-.slider-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px;
-  gap: 20px; /* Space between the cards */
+  background-color: #e8a63c; /* Darker shade on hover */
 }
 
-.cards-slider {
-  display: flex;
-  gap: 20px; /* Space between the cards */
-}
-
+/* Hide scrollbar for the cards-slider */
 .cards-slider::-webkit-scrollbar {
   display: none; /* Hide scrollbar */
 }
-/* carDisplay.css */
-.slider-container {
-  display: flex;
-  overflow-x: hidden;
-  white-space: nowrap;
-  padding: 10px;
-  gap: 20px; /* Space between the cards */
-}
 
-.cards-slider {
-  display: flex;
-  gap: 20px; /* Space between the cards */
-}
-
-.card {
-  flex: 0 0 auto; /* Prevent cards from shrinking or growing */
-  width: 300px; /* Adjust width as needed */
-  margin-right: 20px; /* Adjust the gap between cards */
-}
-
-.cards-slider::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
-}
-.slider-container {
-  overflow: hidden; /* Ensure overflow is hidden */
-  position: relative; /* For positioning */
-}
-
-.cards-slider {
-  display: flex;
-  transition: transform 0.5s ease; /* Smooth transition */
-}
-
-.card {
-  flex: 0 0 auto; /* Prevent cards from shrinking */
-  width: 80%; /* Adjust width as needed, can be 100% for mobile */
-  max-width: 300px; /* Set a max width */
-  margin: 0 5px; /* Space between cards */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
-  border-radius: 10px; /* Optional rounding */
-}
-
-@media (min-width: 600px) {
-  .card {
-    width: 250px; /* Wider cards for larger screens */
-  }
-}
-
-@media (min-width: 900px) {
-  .card {
-    width: 300px; /* Even wider cards for larger screens */
-  }
-}
-.slider-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%; /* Full width */
-}
-
-.cards-slider {
-  display: flex;
-  transition: transform 0.3s ease-in-out; /* Smooth transition */
-}
-
-.card {
-  flex: 0 0 auto;
-  width: 80%; /* Adjust as needed */
-  max-width: 300px; /* Set a max width */
-  margin: 0 5px; /* Space between cards */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-@media (min-width: 600px) {
-  .card {
-    width: 250px; /* Wider cards for larger screens */
-  }
-}
-
-@media (min-width: 900px) {
-  .card {
-    width: 300px; /* Even wider cards for larger screens */
-  }
-}
-.slider-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%; /* Full width */
-}
-
-.cards-slider {
-  display: flex;
-  transition: transform 0.3s ease-in-out; /* Smooth transition */
-}
-
-.card {
-  flex: 0 0 auto; /* Prevent cards from growing or shrinking */
-  width: 90%; /* Adjust for mobile */
-  max-width: 300px; /* Max width for larger screens */
-  margin: 0 5px; /* Space between cards */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
+/* Responsive Styles */
 @media (max-width: 600px) {
   .card {
     width: 80%; /* Adjust width for smaller screens */

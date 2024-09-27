@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React from 'react';
+import Slider from 'react-slick';
 import baleno from '../../assets/images/baleno.png';
 import carens from '../../assets/images/carens.png';
 import dezire from '../../assets/images/dezire.png';
@@ -10,137 +11,66 @@ import tempo from '../../assets/images/tempo.png';
 import Card from '../cars/car.js';
 import './cars.css';
 
-function CarDisplay() {
-  const sliderRef = useRef(null);
-  const [intervalId, setIntervalId] = useState(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+// Car data
+const carsData = [
+  { carImage: innova, carName: 'Innova Crysta', pricePerKM: 20, passengers: 6, luggage: 2, minimum: 300, airConditioner: 'Yes', buttonText: 'Book Now' },
+  { carImage: innovaNormal, carName: 'Innova', pricePerKM: 18, passengers: 6, luggage: 2, minimum: 300, airConditioner: 'Yes', buttonText: 'Book Now' },
+  { carImage: dezire, carName: 'Swift Dezire', pricePerKM: 11, passengers: 5, luggage: 2, minimum: 300, airConditioner: 'Yes', buttonText: 'Book Now' },
+  { carImage: ertiga, carName: 'Ertiga', pricePerKM: 13, passengers: 6, luggage: 4, minimum: 300, airConditioner: 'Yes', buttonText: 'Book Now' },
+  { carImage: tempo, carName: 'Tempo Traveller', pricePerKM: 25, passengers: 14, luggage: 8, minimum: 300, airConditioner: 'Yes', buttonText: 'Book Now' },
+  { carImage: baleno, carName: 'Baleno', pricePerKM: 11, passengers: 4, luggage: 2, minimum: 300, airConditioner: 'Yes', buttonText: 'Book Now' },
+  { carImage: tavera, carName: 'Tavera', pricePerKM: 15, passengers: 9, luggage: 4, minimum: 300, airConditioner: 'Yes', buttonText: 'Book Now' },
+  { carImage: carens, carName: 'Kia Carens', pricePerKM: 15, passengers: 6, luggage: 2, minimum: 300, airConditioner: 'Yes', buttonText: 'Book Now' },
+];
 
-  const carsData = [
-    { carImage: innova, carName: 'Innova Crysta', pricePerKM: 20, passengers: 6, luggage: 2, minimum: 100, airConditioner: 'Yes', buttonText: 'Book Now' },
-    { carImage: innovaNormal, carName: 'Innova', pricePerKM: 18, passengers: 6, luggage: 2, minimum: 100, airConditioner: 'Yes', buttonText: 'Book Now' },
-    { carImage: dezire, carName: 'Swift Dezire', pricePerKM: 11, passengers: 5, luggage: 4, minimum: 150, airConditioner: 'Yes', buttonText: 'Book Now' },
-    { carImage: ertiga, carName: 'Ertiga', pricePerKM: 13, passengers: 7, luggage: 4, minimum: 150, airConditioner: 'Yes', buttonText: 'Book Now' },
-    { carImage: tempo, carName: 'Tempo Traveller', pricePerKM: 25, passengers: 14, luggage: 5, minimum: 150, airConditioner: 'Yes', buttonText: 'Book Now' },
-    { carImage: baleno, carName: 'Baleno', pricePerKM: 20, passengers: 6, luggage: 4, minimum: 150, airConditioner: 'Yes', buttonText: 'Book Now' },
-    { carImage: tavera, carName: 'Tavera', pricePerKM: 15, passengers: 8, luggage: 2, minimum: 150, airConditioner: 'Yes', buttonText: 'Book Now' },
-    { carImage: carens, carName: 'Kia Carens', pricePerKM: 15, passengers: 5, luggage: 2, minimum: 150, airConditioner: 'Yes', buttonText: 'Book Now' },
-  ];
-
-  const slide = useCallback(() => {
-    const slider = sliderRef.current;
-    if (!isDragging && slider) {
-      const cardWidth = slider.querySelector('.card').offsetWidth + 10;
-      slider.scrollBy({
-        left: cardWidth,
-        behavior: 'smooth',
-      });
-    }
-  }, [isDragging]);
-
-  useEffect(() => {
-    const id = setInterval(slide, 3000); // Adjust time as needed
-    setIntervalId(id);
-    return () => clearInterval(id);
-  }, [slide]);
-
-  const stopSlider = () => {
-    clearInterval(intervalId);
-    setIntervalId(null);
-  };
-
-  const startSlider = () => {
-    const id = setInterval(slide, 3000); // Adjust time as needed
-    setIntervalId(id);
-  };
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    stopSlider();
-    setStartX(e.pageX - sliderRef.current.offsetLeft);
-    setScrollLeft(sliderRef.current.scrollLeft);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-    startSlider();
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    startSlider();
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    sliderRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    stopSlider();
-    setStartX(e.touches[0].clientX - sliderRef.current.offsetLeft);
-    setScrollLeft(sliderRef.current.scrollLeft);
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-    startSlider();
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].clientX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    sliderRef.current.scrollLeft = scrollLeft - walk;
+const CarDisplay = () => {
+  // Slider settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Adjust based on how many cards you want to show
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500, // Change this value for the speed of the auto slide
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div
-      className="slider-container"
-      ref={sliderRef}
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-      onTouchMove={handleTouchMove}
-    >
-      <div className="cards-slider">
+    <div className="slider-container">
+      <Slider {...settings}>
         {carsData.map((car, index) => (
-          <Card
-            key={`original-${index}`}
-            carImage={car.carImage}
-            carName={car.carName}
-            pricePerKM={car.pricePerKM}
-            passengers={car.passengers}
-            luggage={car.luggage}
-            minimum={car.minimum}
-            airConditioner={car.airConditioner}
-            buttonText={car.buttonText}
-          />
+          <div key={index}>
+            <Card
+              carImage={car.carImage}
+              carName={car.carName}
+              pricePerKM={car.pricePerKM}
+              passengers={car.passengers}
+              luggage={car.luggage}
+              minimum={car.minimum}
+              airConditioner={car.airConditioner}
+              buttonText={car.buttonText}
+            />
+          </div>
         ))}
-        {carsData.map((car, index) => (
-          <Card
-            key={`duplicate-${index}`}
-            carImage={car.carImage}
-            carName={car.carName}
-            pricePerKM={car.pricePerKM}
-            passengers={car.passengers}
-            luggage={car.luggage}
-            minimum={car.minimum}
-            airConditioner={car.airConditioner}
-            buttonText={car.buttonText}
-          />
-        ))}
-      </div>
+      </Slider>
     </div>
   );
-}
+};
 
 export default CarDisplay;

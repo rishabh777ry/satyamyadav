@@ -38,26 +38,14 @@ const Footer = () => {
                      <img src={logo} alt="" />
                      <p><b>Your Journey Starts with Mahakal.</b></p>
                      <div className="social__link d-flex align-items-center gap-4">
-                        <span>
-                           <Link to='#'>
-                              <i class='ri-youtube-line'></i>
-                           </Link>
-                        </span>
-                        <span>
-                           <Link to='#'>
-                              <i class='ri-github-fill'></i>
-                           </Link>
-                        </span>
-                        <span>
-                           <Link to='#'>
-                              <i class='ri-facebook-circle-line'></i>
-                           </Link>
-                        </span>
-                        <span>
-                           <Link to='#'>
-                              <i class='ri-instagram-line'></i>
-                           </Link>
-                        </span>
+                     <span>
+  <a href='https://www.instagram.com/mahakaltourplanner/' target="_blank" rel="noopener noreferrer">
+    <i class='ri-instagram-line'></i>
+  </a>
+</span>
+
+
+
                      </div>
                   </div>
                </Col>

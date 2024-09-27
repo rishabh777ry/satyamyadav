@@ -34,7 +34,7 @@ function Card({ carImage, carName, pricePerKM, passengers, luggage, minimum, air
         <ul className="card-details">
           <li>Passengers: {passengers}</li>
           <li>Luggage's: {luggage}</li>
-          <li>Minimum: ₹{minimum}/KM</li>
+          <li>Minimum: {minimum} KM</li>
           <li>Air Conditioner: {airConditioner}</li>
         </ul>
         <button className="card-button">{buttonText}</button>

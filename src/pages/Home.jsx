@@ -7,11 +7,11 @@ import worldImg from '../assets/images/logo-bg.png'
 import heroVideo from '../assets/images/maheshwar.mp4'
 import '../styles/home.css'
 
-import FeaturedTourList from '../components/Featured-tours/FeaturedTourList'
 import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery'
 import Testimonials from '../components/Testimonial/Testimonials'
 import CarDisplay from '../components/cars/cars'
 import ServiceList from '../services/ServiceList'
+import TourSlider from '../shared/TourSlider'
 import SearchBar from './../shared/SearchBar'
 import Subtitle from './../shared/subtitle'
 const Home = () => {
@@ -76,7 +76,7 @@ const Home = () => {
                   <Subtitle subtitle={'Explore'} />
                   <h2 className='featured__tour-title'>Our featured tours</h2>
                </Col>
-               <FeaturedTourList />
+               <TourSlider />
             </Row>
          </Container>
       </section>
