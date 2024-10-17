@@ -4,7 +4,7 @@ import heroImg02 from '../assets/images/MAHAKAL.jpeg'
 import heroImg from '../assets/images/OMKARESHWAR.jpg'
 import experienceImg from '../assets/images/car.png'
 import worldImg from '../assets/images/logo-bg.png'
-import heroVideo from '../assets/images/maheshwar.mp4'
+import heroVideo from '../assets/images/ujjainvideo.mp4'
 import '../styles/home.css'
 
 import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery'
@@ -23,7 +23,7 @@ const Home = () => {
                <Col lg='6'>
                   <div className="hero__content">
                      <div className="hero__subtitle d-flex align-items-center">
-                        <Subtitle subtitle={'Plan Ahead, Travel Smarter!'} />
+                        <Subtitle subtitle={'Plan Ahead, Travel Smarter! \n Call: +91 62667 17993'} />
                         <img src={worldImg} alt="" />
                      </div>
                      <h1>Every trip is a new chapter in your Book of  <span className='hightlight'> memories</span></h1>
