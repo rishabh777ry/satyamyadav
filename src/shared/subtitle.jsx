@@ -2,7 +2,9 @@ import React from 'react'
 
 const subtitle = ({subtitle}) => {
    return (
-      <h3 className='section__subtitle'>{subtitle}</h3>
+      <h3 style={{ fontFamily: '"Montserrat", sans-serif', fontSize: '1.5rem', color: '#6e7074' }}>
+      {subtitle}
+   </h3>
    )
 }
 
