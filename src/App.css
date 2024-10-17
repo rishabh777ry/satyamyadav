@@ -80,7 +80,7 @@ ul {
   background: var(--secondary-color);
   font-family: var(--subtitle-font-name);
   width: max-content;
-  padding: 0.2rem 0.8rem; /* Slightly increased padding */
+  padding: 0.8rem 0.8rem; /* Slightly increased padding */
   padding-right: 0.9rem;
   padding-left: 0.9rem;
   border-radius: 50px;
