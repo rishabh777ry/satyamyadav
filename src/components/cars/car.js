@@ -5,6 +5,17 @@ function Card({ carImage, carName, pricePerKM, passengers, luggage, minimum, air
   const [isVisible, setIsVisible] = useState(true);
   const cardRef = useRef(null);
 
+  const handleCall = () => {
+    const phoneNumber = '+916266717993';
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent); // Check if it's a mobile device
+
+    if (isMobile) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      alert(`Please call this number for booking: ${phoneNumber}`);
+    }
+  };
+
   useEffect(() => {
     const handleResize = () => {
       const isMobile = window.innerWidth <= 768;
@@ -37,7 +48,7 @@ function Card({ carImage, carName, pricePerKM, passengers, luggage, minimum, air
           <li>Minimum: {minimum} KM</li>
           <li>Air Conditioner: {airConditioner}</li>
         </ul>
-        <button className="card-button">{buttonText}</button>
+        <button className="card-button" onClick={handleCall}>{buttonText}</button>
       </div>
     </div>
   );
