@@ -66,9 +66,6 @@ const Header = () => {
                            <a href="tel:+916266717993" className="contact__link">
                               <FaPhone /> +91 6266717993
                            </a>
-                           <a href="tel:+919893124714" className="contact__link">
-                              <FaPhone /> +91 9893124714
-                           </a>
                         </li>
                      </ul>
                   </div>
