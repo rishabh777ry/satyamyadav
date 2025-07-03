@@ -103,7 +103,7 @@ const Footer = () => {
                            Phone:
                         </h6>
 
-                        <p className='mb-0'>+91 6266 717 993</p>
+                        <p className='mb-0'>+91 62667 17993, +91 9893124714</p>
                      </ListGroupItem>
                   </ListGroup>
                </Col>
