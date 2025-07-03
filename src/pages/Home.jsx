@@ -23,7 +23,7 @@ const Home = () => {
                <Col lg='6'>
                   <div className="hero__content">
                      <div className="hero__subtitle d-flex align-items-center">
-                        <Subtitle subtitle={'Plan Ahead, Travel Smarter! \n Call: +91 62667 17993'} />
+                        <Subtitle subtitle={'Plan Ahead, Travel Smarter! \n Call: +91 62667 17993, +91 98931 24714'} />
                         <img src={worldImg} alt="" />
                      </div>
                      <h1>Every trip is a new chapter in your Book of  <span className='hightlight'> memories</span></h1>
